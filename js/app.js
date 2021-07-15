@@ -17,7 +17,7 @@ const app = {
     let contador = 0;
     for (let i = 0; i < tablero.length; i++) {
       for (let j = 0; j < tablero[i].length; j++) {
-        if (contador == tablero[i].length) {
+        if (contador === tablero[i].length) {
           this.crearEspacios();
           contador = 0;
         }
@@ -57,11 +57,11 @@ const app = {
   },
 
   comprobacion: function (letra, numero) {
-    if (tablero[letra][numero] == 1) {
+    if (tablero[letra][numero] === 1) {
       tablero[letra][numero] = "x";
       this.crearEspacios();
       this.cargarTablero();
-    } else if (tablero[letra][numero] == 0) {
+    } else if (tablero[letra][numero] === 0) {
       tablero[letra][numero] = "o";
       this.crearEspacios();
 
