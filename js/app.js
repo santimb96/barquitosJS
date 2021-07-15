@@ -12,8 +12,6 @@ const app = {
       this.divTablero.innerHTML = " ";
     }
 
-    let div = document.createElement("div");
-
     let contador = 0;
     for (let i = 0; i < tablero.length; i++) {
       for (let j = 0; j < tablero[i].length; j++) {
@@ -32,7 +30,6 @@ const app = {
         }
       }
     }
-    this.divTablero.appendChild(div);
   },
 
   iniciar: function () {
