@@ -15,8 +15,8 @@ const app = {
   error: document.getElementById("error"),
 
   cargarTablero: function () {
-    numBarcos.innerHTML = `Hay ${this.barcos} barcos`;
-    ganador.innerHTML = `Llevas ${this.intentos} intentos`;
+    this.numBarcos.innerHTML = `Hay ${this.barcos} barcos`;
+    this.ganador.innerHTML = `Llevas ${this.intentos} intentos`;
 
     if (this.divTablero.childNodes.length > 0) {
       this.divTablero.innerHTML = " ";
@@ -45,7 +45,7 @@ const app = {
 
   iniciar: function () {
     const abecedario = "abcdefghijklmnopqrstuvwxyz";
-    info.innerHTML = "Introduce coordenadas y clica!";
+    this.info.innerHTML = "Introduce coordenadas y clica!";
 
     document.getElementById("accion").addEventListener(
       "click",
@@ -64,7 +64,7 @@ const app = {
   },
 
   comprobacion: function (letra, numero) {
-    error.innerHTML = " ";
+    this.error.innerHTML = " ";
     try {
       if (tablero[letra][numero] === 1) {
         tablero[letra][numero] = "x";
@@ -85,7 +85,7 @@ const app = {
   },
 
   mensajeError: function () {
-    error.innerHTML = `Te has equivocado de coordenadas!`;
+    this.error.innerHTML = `Te has equivocado de coordenadas!`;
   },
 
   crearEspacios: function () {
@@ -105,7 +105,7 @@ const app = {
   
   comprobarVictoria: function () {
     if (this.barcos === this.hundido) {
-      ganador.innerHTML = `Has ganado con ${this.intentos} intentos.<br>
+      this.ganador.innerHTML = `Has ganado con ${this.intentos} intentos.<br>
       Refresca la página para volver a jugar!`;
     }
   },
