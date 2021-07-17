@@ -68,13 +68,11 @@ const app = {
     try {
       if (tablero[letra][numero] === 1) {
         tablero[letra][numero] = "x";
-        this.crearEspacios();
         this.hundido++;
         this.intentos++;
         this.cargarTablero();
       } else if (tablero[letra][numero] === 0) {
         tablero[letra][numero] = "o";
-        this.crearEspacios();
         this.intentos++;
         this.cargarTablero();
       } else {
